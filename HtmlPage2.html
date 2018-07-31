@@ -1,0 +1,174 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>JS操作数据库</title>
+    <script src="Jquery/jquery-2.1.0.min.js"></script>
+    <style>
+        .table {
+            margin: 0;
+            border-collapse: collapse;
+            border: 1.0px solid #ede2e2;
+        }
+
+            .table th {
+                font-size: 1.2em;
+                text-align: left;
+                padding-left: 4px;
+                border-collapse: collapse;
+                border: 1.0px solid #ede2e2;
+                background: #f8f6f6;
+                line-height: 30px;
+                width: 160px;
+            }
+
+            .table td {
+                font-size: 1.2em;
+                border: 1.0px solid #ede2e2;
+                text-align: left;
+                padding-left: 4px;
+                width: 160px;
+                line-height: 30px;
+            }
+
+            .table .td1 {
+                width: 220px;
+            }
+        /*.table .tr1 { background-color: #ffffff;}*/
+    </style>
+
+</head>
+
+<body>
+    <table align="center" width="100%">
+        <tbody>
+            <tr>
+                <td>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <span id="table1"></span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <script>
+        //var $ = {
+        //    getJSON: function (url, params, callbackFuncName, callback) {
+        //        var paramsUrl = "",
+        //            jsonp = this.getQueryString(url)[callbackFuncName];
+        //        for (var key in params) {
+        //            paramsUrl += "&" + key + "=" + encodeURIComponent(params[key]);
+        //        }
+        //        url += paramsUrl;
+        //        window[jsonp] = function (data) {
+        //            window[jsonp] = undefined;
+        //            try {
+        //                delete window[jsonp];
+        //            } catch (e) { }
+
+        //            if (head) {
+        //                head.removeChild(script);
+        //            }
+        //            callback(data);
+        //        };
+
+        //        var head = document.getElementsByTagName('head')[0];
+        //        var script = document.createElement('script');
+        //        script.charset = "UTF-8";
+        //        script.src = url;
+        //        head.appendChild(script);
+        //        return true;
+        //    },
+        //    getQueryString: function (url) {
+        //        var result = {}, queryString = (url && url.indexOf("?") != -1 && url.split("?")[1]) || location.search.substring(1),
+        //            re = /([^&=]+)=([^&]*)/g, m;
+        //        while (m = re.exec(queryString)) {
+        //            result[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+        //        }
+        //        return result;
+        //    }
+        //};
+
+        //function Get() {
+        //    //alert("W");
+        //$.getJSON("http://218.92.115.55/E-Commerce/Service/MaterialsPurchasing/GetPurchasingOrderDetail.aspx?" + "&callback=?", null, function (ret) {
+
+        //    if (ret == 0) {
+        //        return;
+        //    }
+
+        //    $("#table1").empty();
+        //    var tHtml = "<table class='table'><tr><th>名称</th><th>数量</th><th>状态</th><th class='td1'>时间</th></tr>";
+        //    for (var i = 0; i < ret.length; ++i) {
+        //        tHtml += "<tr class='tr1'><td>"
+        //              + ret[i][0] + "</td><td>"
+        //              + ret[i][1] + "</td><td>"
+        //              + ret[i][2] + "</td><td class='td1'>"
+        //              + ret[i][3] + "</td></tr>"
+        //    }
+        //    tHtml += "</table>";
+        //        document.getElementById("table1").innerHTML = tHtml;
+
+        //    })
+
+        //    $.getJSON("http://218.92.115.55/E-Commerce/Service/MaterialsPurchasing/GetPurchasingOrderDetail.aspx?", null, "callback", function (data) {
+        //        var data11 = data;
+        //    //todo
+        //});
+
+        ////var url = "http://218.92.115.55/E-Commerce/Service/MaterialsPurchasing/GetPurchasingOrderDetail.aspx?";
+        ////var request = window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHTTP") : new XMLHttpRequest();
+        ////request.open("GET", url, true);
+        ////request.send();
+        ////var data = request.responseText;
+    
+        //document.getElementById("table1").
+        //document.getElementById("table1").innerHTML = 222222;
+    //}
+    //Get();
+
+    </script>
+
+    <script>
+        var url = "http://218.92.115.55/E-Commerce/ServiceECommerce.asmx/GetPurchasingOrderDetail";
+        var request = window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHTTP") : new XMLHttpRequest();
+        request.open('POST', url, true);
+ 
+        request.onreadystatechange = function () {
+            if (request.status >= 200 && request.status < 400) {
+                // Success!
+                data = JSON.parse(request.responseText);
+                console.log(data);
+                if (data.ret == 1) {
+                    window.location = data.url;
+
+                }
+            }
+            //var data = JSON.parse(request.responseText);
+        };
+
+        request.send();
+
+
+
+ 
+
+    </script>
+
+</body>
+
+
+</html>

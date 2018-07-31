@@ -1,0 +1,111 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>JS操作数据库</title>
+    <script src="Jquery/jquery-2.1.0.min.js"></script>
+    <style>
+    .table { margin: 0;border-collapse: collapse;border: 1.0px solid #ede2e2;}
+    .table th { font-size: 1.2em; text-align: left; padding-left:4px; border-collapse: collapse; border: 1.0px solid #ede2e2; background: #f8f6f6; line-height: 30px; width:160px; }
+    .table td { font-size: 1.2em; border: 1.0px solid #ede2e2; text-align: left; padding-left:4px; width:160px; line-height: 30px;}
+    .table .td1 { width:220px; }  
+    /*.table .tr1 { background-color: #ffffff;}*/
+    </style>
+   
+    <script language="javascript" type="text/javascript">
+
+
+
+    var conn, rs;
+
+    /*获取数据库连接*/
+    function getConnection() {
+        conn = new ActiveXObject("ADODB.Connection");
+        // 1.JavaScript操作数据库JS操作Access数据库
+        // 在F盘有文件abc.mdf，表名为user，一共2个字段，id数字类型主键，name文本类型
+        // conn.Open("DBQ=f://abc.mdb;DRIVER={Microsoft Access Driver (*.mdb)};");
+
+        // 2.JavaScript操作数据库JS操作SQL Server数据库
+        // 数据库名为：test，表名为user，id为int类型，自增列，name为用户名，为varchar类型；数据库用户名为sa，密码是sasa。
+        //conn.Open("Driver={SQL Server};Server=.;DataBase=test;UID=sa;Password=sasa");       //打开数据库
+
+        // 3.JavaScript操作数据库JS操作Oracle数据库
+        conn.open("Provider=MSDAORA.1;Password=si15HWCyfs1p;User ID=awstest;Data Source=PORT_168.100.1.100;Persist Security Info=True");
+        return conn;
+    }
+
+    /*执行增删改的方法*/
+    function executeUpdate(sql) {
+        getConnection();
+        try {
+            conn.execute(sql);
+            return true;
+        } catch (e) {
+            document.write(e.description);
+        } finally {
+            closeAll();
+        }
+        return false;
+    }
+
+    $(function () {
+        executeQuery("select spmc,sl,ddzt,to_char(cjsj, 'yyyy/mm/dd hh24:mi:ss') as cjsj from BO_WZCGMX_DDMX");
+        /*执行查询的方法*/
+        function executeQuery(sql) {
+            getConnection();
+            try {
+                rs = new ActiveXObject("ADODB.Recordset");
+                rs.ActiveConnection = conn;
+                rs.Open(sql);
+                var tHtml = "<table class='table'><tr><th>名称</th><th>数量</th><th>状态</th><th class='td1'>时间</th></tr>";
+                while (!rs.EOF) {
+                    tHtml += "<tr class='tr1'><td>"
+                                + rs.Fields("spmc") + "</td><td>"
+                                + rs.Fields("sl") + "</td><td>"
+                                + rs.Fields("ddzt") + "</td><td class='td1'>"
+                                + rs.Fields("cjsj") + "</td></tr>"
+                    rs.moveNext();
+                }
+                tHtml += "</table>";
+                document.getElementById("table1").innerHTML = tHtml;
+            } catch (e) {
+                document.getElementById("table1").innerHTML = document.write(e.description);
+            } finally {
+                closeAll();
+            }
+        }
+    });
+
+    /*关闭所有资源*/
+    function closeAll() {
+        if (rs != null) {
+            rs.close();
+            rs = null;
+        }
+        if (conn != null) {
+            conn.close();
+            conn = null;
+        }
+    }
+
+
+    </script>
+
+
+  
+</head>
+
+<body>
+        <table align="center" width="100%">
+            <tr>
+                <td>
+                    <span id="table1"></span>
+                </td>
+            </tr>
+        </table>
+    </body>
+
+
+</html> 
+
+

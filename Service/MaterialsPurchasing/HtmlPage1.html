@@ -1,0 +1,299 @@
+﻿<html>
+<head>
+    <title>[@title]</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <link href="../aws_css/public.css" media="all" rel="Stylesheet" type="text/css" />
+    <script>
+        var myLang = '<I18N#lang>';// 添加当前语言环境变量 用以解决登录时搜索按钮国际化问题
+        //effect.js I18N变量定义 开始
+        var 为 = '<I18N#为>';
+        var 最大值校验出错请确认值 = "<I18N#最大值校验出错，请确认值>";
+        var 最小值校验出错请确认值 = "<I18N#最小值校验出错，请确认值>";
+        var 不允许包含空格 = "<I18N#不允许包含空格>";
+        var 不允许为空 = "<I18N#不允许为空>";
+        var 脚本 = "<I18N#脚本>";
+        var 的有效性 = "<I18N#的有效性>";
+        var 不能创建XMLHttpRequest对象实例_ = "<I18N#不能创建XMLHttpRequest对象实例.>";
+        var 执行出错请确认语句值为布尔值 = "<I18N#执行出错，请确认语句值为布尔值>";
+        var 执行出错请确认语法正确 = "<I18N#执行出错，请确认语法正确>";
+        var 警告 = "<I18N#警告>";
+        var 对不起当前页面不支持模板查看 = "<I18N#对不起，当前页面不支持模板查看>";
+        var 数据未通过合法性校验姓名不允许包含空格如果需要请用进行代替 = "<I18N#数据未通过合法性校验[姓名]不允许包含空格,如果需要,请用'.'/'_'进行代替>";
+        var 日期范围校验出错日期不是Ymd格式 = "<I18N#日期范围校验出错，日期不是Y-m-d格式>";
+        var 日期范围校验出错开始日期不是Ymd格式 = "<I18N#日期范围校验出错，开始日期不是Y-m-d格式>";
+        var 日期范围校验出错_结束日期不是Ymd格式 = "<I18N#日期范围校验出错，结束日期不是Y-m-d格式>";
+        var 个字节 = "<I18N#个字节>";
+        var 的参数出错 = "<I18N#的参数出错>";
+        var 数据未通过合法性校验 = "<I18N#数据未通过合法性校验>";
+        var 表达式 = "<I18N#表达式>";
+        var 数值范围校验出错请确认值 = "<I18N#数值范围校验出错，请确认值>";
+        var 执行出错请确认脚本返回布尔值 = "<I18N#执行出错，请确认脚本返回布尔值>";
+        var 请安装公文管理套件 = "<I18N#请安装公文管理套件>";
+        var 正则表达式 = "<I18N#正则表达式>";
+        var 操作失败 = "<I18N#操作失败>";
+        var 或 = "<I18N#或>";
+        var 提示信息 = "<I18N#提示信息>";
+        var 执行出错请确认语法正确 = "<I18N#执行出错，请确认语法正确>";
+        var 数值超出范围支持的最大数值为99999999999999 = "<I18N#数值超出范围！支持的最大数值为 999999999999.99>";
+        var 系统未找到主题词 = "<I18N#系统未找到主题词>";
+        var 长度不能超过 = "<I18N#长度不能超过>";
+        var 格式错误 = "<I18N#格式错误>";
+        var 插入上传文件 = "<I18N#插入上传文件>";
+        var 插入上传图片 = "<I18N#插入上传图片>";
+        var 国际电话格式 = "<I18N#国际电话格式>";
+        var 姓名或拼音缩写 = "<I18N#姓名或拼音缩写>";
+        var 确认要删除选中的知识节点吗 = "<I18N#确认要删除选中的知识节点吗>";
+        var 必须是数字类型 = "<I18N#必须是数字类型>";
+        var 当前模式处于模拟测试模式或者URL表单模式不支持扩展按钮的操作 = "<I18N#当前模式处于模拟测试模式或者URL表单模式，不支持扩展按钮的操作>";
+        //effect.js I18N变量定义 结束
+    </script>
+    <script type="text/javascript" src="../aws_js/effect.js"></script>
+    <script>
+        var myLang = '<I18N#lang>';// 添加当前语言环境变量 用以解决登录时搜索按钮国际化问题
+        //binddata.js里面的国际化变量开始
+        var 关联被撤销 = "<I18N#关联被撤销>";
+        var 网络通讯失败 = "<I18N#网络通讯失败>";
+        var 保存表单记录失败_附件无法上传_返回信息 = "<I18N#保存表单记录失败_附件无法上传_返回信息>";
+        var 请保存表单数据 = "<I18N#请保存表单数据>";
+        var 确认要删除选中的文件吗 = "<I18N#确认要删除选中的文件吗>";
+        var 确认要删除这个附件吗 = '<I18N#确认要删除这个附件吗>';
+        var 文件名为 = '<I18N#文件名为>';
+        var 保存审核菜单失败 = "<I18N#保存审核菜单失败>";
+        var 警告_您的审核菜单信息可能超长或包含怪字符_审核信息保存失败_请确认_返回信息 = "<I18N#警告_您的审核菜单信息可能超长或包含怪字符_审核信息保存失败_请确认_返回信息>";
+        var 按钮 = "<I18N#按钮>";
+        var 点击异常_请重试 = "<I18N#点击异常_请重试>";
+        var 保存表单失败_请重试 = "<I18N#保存表单失败_请重试>";
+        var 表单保存失败_请重试 = "<I18N#表单保存失败_请重试>";
+        var 对不起_您没有选择为您预先设置的审核菜单 = "<I18N#对不起_您没有选择为您预先设置的审核菜单>";
+        var 对不起_您没有填写意见留言 = "<I18N#对不起_您没有填写意见留言>";
+        var 确认要删除选中的行吗 = '<I18N#确认要删除选中的行吗>';
+        var 确认要清空表格全部数据吗 = '<I18N#确认要清空表格全部数据吗>';
+        var 输入的条件发现多于1条记录可弹出窗口进行选择确认吗 = "<I18N#输入的条件发现多于1条记录可弹出窗口进行选择确认吗>";
+        var 没有发现匹配的字典记录请确定 = "<I18N#没有发现匹配的字典记录请确定>";
+        var 该字典使用了$getForm动态取值_但表单总字段值已超出512个字符限制_请联系管理员 = "<I18N#该字典使用了$getForm动态取值_但表单总字段值已超出512个字符限制_请联系管理员>";
+        var 清空行选择数据失败 = "<I18N#清空行选择数据失败>";
+        var 手写意见已保存 = "<I18N#手写意见已保存>";
+        var 保存完毕 = "<I18N#保存完毕>";
+        var 修改已保存 = "<I18N#修改已保存>";
+        var 授权 = "<I18N#授权>";
+        var 请选择要复制的记录 = "<I18N#请选择要复制的记录>";
+        var 请填写您要复制记录的条数 = "<I18N#请填写您要复制记录的条数>";
+        var 请输入数字 = "<I18N#请输入数字>";
+        var 请输入大于0的数字 = "<I18N#请输入大于0的数字>";
+        var 头像标识不允许为空 = "<I18N#头像标识不允许为空>";
+        var 请删除已上传的头像图片 = "<I18N#请删除已上传的头像图片>";
+        var 分类选择 = "<I18N#分类选择>";
+        var 对不起您没有上传附件 = "<I18N#对不起您没有上传附件>";
+        var 确认要删除该附件吗 = "<I18N#确认要删除该附件吗>";
+        var 请选择审核菜单后上传 = "<I18N#请选择审核菜单后上传>";
+        //binddata.js里面的国际化变量结束
+    </script>
+    <!--<script type="text/javascript" src="../aws_js/binddata.js"></script>
+    <script type="text/javascript" src="../aws_js/calendar.js"></script>-->
+    <!--<script type="text/javascript" src="../aws_js/jquery/jquery1.8.3.min.js"></script>-->
+    <script src="../../Jquery/jquery-2.1.0.min.js"></script>
+    <style type="text/css">
+        <!-- /*请修改此处设置第一列的样式*/
+        .td1 {
+            width: 20%;
+            padding-right: 3px;
+        }
+
+        /*请修改此处设置第二列的样式*/
+        .td2 {
+            width: 30%;
+        }
+
+        /*请修改此处设置第三列的样式*/
+        .td3 {
+            width: 80%;
+            padding-left: 3px;
+        }
+
+        /*请修改此处设置第四列的样式*/
+        .td4 {
+            width: 100%;
+            padding-left: 3px;
+        }
+
+        .tr1 {
+            background-color: #ffffff;
+        }
+
+        /*请修改此处设置colspan = 3的单元格样式*/
+        .td_colspan_3 {
+            padding-left: 3px;
+        }
+
+        /*请修改此处设置colspan = 4的单元格样式*/
+        .td_colspan_4 {
+        }
+
+        /*请修改此处设置subReport子表的单元格样式*/
+        .td_subReport {
+        }
+
+        /*请修改此处以改变表单标题样式*/
+        .title {
+            color: #333333;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        body {
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+        }
+
+        .STYLE1 {
+            color: #0000FF;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .fs {
+            font-size: 16px;
+        }
+        -->
+        .table {
+            margin: 0;
+            border-collapse: collapse;
+            border: 1.0px solid #ede2e2;
+        }
+
+            .table th {
+                font-size: 1.2em;
+                text-align: left;
+                padding-left: 4px;
+                border-collapse: collapse;
+                border: 1.0px solid #ede2e2;
+                background: #f8f6f6;
+                line-height: 30px;
+                width: 160px;
+            }
+
+            .table td {
+                font-size: 1.2em;
+                border: 1.0px solid #ede2e2;
+                text-align: left;
+                padding-left: 4px;
+                width: 160px;
+                line-height: 30px;
+            }
+
+            .table .td1 {
+                width: 220px;
+            }
+    </style>
+</head>
+<body>
+    <form action="./message.wf" method="post" name="frmMain">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" style="padding-bottom: 30px; padding-top: 30px; padding-left: 30px; padding-right: 30px" width="100%">
+            <tbody>
+                <tr>
+                    <td>
+                        &nbsp;
+                        <div align="center" class="title">物资采购测试单</div>
+
+                        <div><span class="fs">填报日期：</span><span class="STYLE1">[@APPLYDATE]&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fs">编号：</span><span class="STYLE1">[@BH]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table align="center" width="98%">
+                            <tbody>
+                                <tr>
+                                    <!--请修改此处颜色值改变边框颜色 cy 2009.2.11 -->
+                                    <td bgcolor="gray">
+                                        <table cellpadding="0" cellspacing="1" width="100%">
+                                            <tbody>
+                                                <tr class="tr1">
+                                                    <td align="right" height="40" width="20%"><span class="fs">申请人</span></td>
+                                                    <td class="td2" width="30%"><span class="STYLE1">[@XM]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="STYLE1">[@SQRID][@WYID]</span></td>
+                                                    <td align="right" width="15%"><span class="fs">标题</span></td>
+                                                    <td width="35%"><span class="STYLE1">[@BT]</span></td>
+                                                </tr>
+                                                <tr class="tr1">
+                                                    <td align="right" height="40"><span class="fs">部门</span></td>
+                                                    <td colspan="3"><span class="STYLE1">[@DEPARTMENT]</span></td>
+                                                </tr>
+                                                <tr class="tr1">
+                                                    <td align="right" height="40"><span class="fs">联系电话</span></td>
+                                                    <td colspan="3"><span class="STYLE1">[@LXDH]&nbsp;&nbsp;&nbsp;&nbsp; </span></td>
+                                                </tr>
+                                                <tr class="tr1">
+                                                    <td align="right" height="40"><span class="fs">发票要求</span></td>
+                                                    <td colspan="3"><span class="STYLE1">[@FPYQ]&nbsp; 发票抬头:[@FPTT]</span></td>
+                                                </tr>
+                                                <tr class="tr1">
+                                                    <td align="left" colspan="4" height="80" valign="top"><span class="STYLE1">[@SubReport]</span></td>
+                                                </tr>      
+                                                <tr>
+                                                    <td align="left" colspan="4" valign="top">采购订单明细</td>
+                                                </tr>                                       
+                                                <tr class="tr1">                                                 
+                                                    <td align="left" colspan="4" valign="top"><span id="table1">1111&nbsp;</span></td>
+                                                </tr>
+                                                <tr class="tr1">                                               
+                                                    <td colspan="3"><span class="STYLE1">[@SHDZ]</span></td>
+                                                </tr>
+                                                <tr class="tr1">
+                                                    <td align="right" height="40">&nbsp;&nbsp;&nbsp;&nbsp;询价截止日期</td>
+                                                    <td colspan="3"><span class="STYLE1">[@XJJZRQ]</span></td>
+                                                </tr>
+                                                <tr class="tr1">
+                                                    <td align="right" height="40">&nbsp;&nbsp;&nbsp;&nbsp;期望收货日期</td>
+                                                    <td colspan="3"><span class="STYLE1">[@QWSHRQ]</span></td>
+                                                </tr>
+                                                <tr class="tr1">
+                                                    <td align="right" height="40"><span class="fs">其他要求</span></td>
+                                                    <td colspan="3"><span class="STYLE1">[@BZ]</span></td>
+                                                </tr>
+                                                <tr class="tr1">
+                                                    <td align="right" height="40"><span class="fs">邮箱</span></td>
+                                                    <td colspan="3"><span class="STYLE1">[@YX]</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 3px"><font color="#0000ff">[@Actionsoft]</font></td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            function Get() {
+                var bindid = "369949";
+        $.getJSON("http://218.92.115.55/E-Commerce/Service/MaterialsPurchasing/GetPurchasingOrderDetail.aspx?BindId=" + bindid + "&callback=?", null, function (ret) {
+
+            if (ret == 0) {
+                return;
+            }
+
+            $("#table1").empty();
+            var tHtml = "<table class='table'><tr><th>名称</th><th>数量</th><th>状态</th><th class='td1'>时间</th></tr>";     
+            for (var i = 0; i < ret.length; ++i) {
+                tHtml += "<tr class='tr1'><td>"
+                        + ret[i][0] + "</td><td>"
+                        + ret[i][1] + "</td><td>"
+                        + ret[i][2] + "</td><td class='td1'>"
+                        + ret[i][3] + "</td></tr>"
+            }
+            tHtml += "</table>";
+            document.getElementById("table1").innerHTML = tHtml;
+        });
+    }
+
+            Get();
+
+        </script>
+    </form>
+</body>
+</html>
